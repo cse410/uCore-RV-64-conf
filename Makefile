@@ -5,6 +5,7 @@ SHELL := /bin/bash
 DOCKER_NAME ?= uCore-RV-64-Base
 DIR := workplace
 
+run: test
 
 test: test1 test2
 
@@ -20,51 +21,44 @@ lab5: test8
 
 
 test1:
-	git submodule init
-	git submodule update
-	cd uCore-RV-64-lab && git checkout ch1 && make run
+	git fetch
+	git checkout ch1
+	make run
 
 test2:
-	git submodule init
-	git submodule update
-	cp -r uCore-RV-64-test uCore-RV-64-lab/user
-	cd uCore-RV-64-lab && git checkout ch2 && make test BASE=1
+	git fetch
+	git checkout ch2
+	make test BASE=1
 	
 test3:
-	git submodule init
-	git submodule update
-	cp -r uCore-RV-64-test uCore-RV-64-lab/user
-	cd uCore-RV-64-lab && git checkout ch3 && make test BASE=1
+	git fetch
+	git checkout ch3
+	make test BASE=1
 	
 test4:
-	git submodule init
-	git submodule update
-	cp -r uCore-RV-64-test uCore-RV-64-lab/user
-	cd uCore-RV-64-lab && git checkout ch4 && make test BASE=1
+	git fetch
+	git checkout ch4
+	make test BASE=1
 	
 test5:
-	git submodule init
-	git submodule update
-	cp -r uCore-RV-64-test uCore-RV-64-lab/user
-	cd uCore-RV-64-lab && git checkout ch5 && make test BASE=1
+	git fetch
+	git checkout ch5
+	make test BASE=1
 
 test6:
-	git submodule init
-	git submodule update
-	cp -r uCore-RV-64-test uCore-RV-64-lab/user
-	cd uCore-RV-64-lab && git checkout ch6 && make test BASE=1
+	git fetch
+	git checkout ch6
+	make test BASE=1
 	
 test7:
-	git submodule init
-	git submodule update
-	cp -r uCore-RV-64-test uCore-RV-64-lab/user
-	cd uCore-RV-64-lab && git checkout ch7 && make test BASE=1
+	git fetch
+	git checkout ch7
+	make test BASE=1
 	
 test8:
-	git submodule init
-	git submodule update
-	cp -r uCore-RV-64-test uCore-RV-64-lab/user
-	cd uCore-RV-64-lab && git checkout ch8 && make test BASE=1
+	git fetch
+	git checkout ch8 
+	make test BASE=1
 
 clean:
 	rm -rf ${DIR}
@@ -73,6 +67,108 @@ docker:
 	docker pull nzpznk/oslab-c-env
 	docker run -it --name ${DOCKER_NAME} ${DOCKER_IMAGE_NAME} /bin/bash
 
+
+setclassroom: setclassroom1 setclassroom2 setclassroom3 setclassroom4 setclassroom5 setclassroom6 setclassroom7 setclassroom8
+
+setclassroom1:
+	git checkout ch1
+	git clone https://github.com/uCore-RV-64/uCore-RV-64-conf.git cr-scripts
+	#git checkout master -- scripts/classroom.yml
+	#git checkout master -- scripts/autograding0.json
+	mkdir -p .github/workflows
+	mkdir -p .github/classroom
+	touch .github/.keep
+	cp cr-scripts/classroom.yml .github/workflows/classroom.yml
+	cp cr-scripts/autograding0.json .github/classroom/autograding.json
+	git add .github/.keep
+	git add .github/classroom/autograding.json
+	git add .github/workflows/classroom.yml
+	#git commit -m"update classroom.yml .keep for classroom CI test"
+	#git push
+
+setclassroom2:
+	git checkout ch2
+	git clone https://github.com/uCore-RV-64/uCore-RV-64-conf.git cr-scripts
+	mkdir -p .github/workflows
+	mkdir -p .github/classroom
+	touch .github/.keep
+	cp cr-scripts/classroom.yml .github/workflows/classroom.yml
+	cp cr-scripts/autograding1.json .github/classroom/autograding.json
+	git add .github/.keep
+	git add .github/classroom/autograding.json
+	git add .github/workflows/classroom.yml
+
+setclassroom3:
+	git checkout ch3
+	git clone https://github.com/uCore-RV-64/uCore-RV-64-conf.git cr-scripts
+	mkdir -p .github/workflows
+	mkdir -p .github/classroom
+	touch .github/.keep
+	cp cr-scripts/classroom.yml .github/workflows/classroom.yml
+	cp cr-scripts/autograding1.json .github/classroom/autograding.json
+	git add .github/.keep
+	git add .github/classroom/autograding.json
+	git add .github/workflows/classroom.yml
+	
+setclassroom4:
+	git checkout ch4
+	git clone https://github.com/uCore-RV-64/uCore-RV-64-conf.git cr-scripts
+	mkdir -p .github/workflows
+	mkdir -p .github/classroom
+	touch .github/.keep
+	cp cr-scripts/classroom.yml .github/workflows/classroom.yml
+	cp cr-scripts/autograding1.json .github/classroom/autograding.json
+	git add .github/.keep
+	git add .github/classroom/autograding.json
+	git add .github/workflows/classroom.yml
+
+setclassroom5:
+	git checkout ch5
+	git clone https://github.com/uCore-RV-64/uCore-RV-64-conf.git cr-scripts
+	mkdir -p .github/workflows
+	mkdir -p .github/classroom
+	touch .github/.keep
+	cp cr-scripts/classroom.yml .github/workflows/classroom.yml
+	cp cr-scripts/autograding1.json .github/classroom/autograding.json
+	git add .github/.keep
+	git add .github/classroom/autograding.json
+	git add .github/workflows/classroom.yml
+
+setclassroom6:
+	git checkout ch6
+	git clone https://github.com/uCore-RV-64/uCore-RV-64-conf.git cr-scripts
+	mkdir -p .github/workflows
+	mkdir -p .github/classroom
+	touch .github/.keep
+	cp cr-scripts/classroom.yml .github/workflows/classroom.yml
+	cp cr-scripts/autograding1.json .github/classroom/autograding.json
+	git add .github/.keep
+	git add .github/classroom/autograding.json
+	git add .github/workflows/classroom.yml
+
+setclassroom7:
+	git checkout ch7
+	git clone https://github.com/uCore-RV-64/uCore-RV-64-conf.git cr-scripts
+	mkdir -p .github/workflows
+	mkdir -p .github/classroom
+	touch .github/.keep
+	cp cr-scripts/classroom.yml .github/workflows/classroom.yml
+	cp cr-scripts/autograding1.json .github/classroom/autograding.json
+	git add .github/.keep
+	git add .github/classroom/autograding.json
+	git add .github/workflows/classroom.yml
+
+setclassroom8:
+	git checkout ch8
+	git clone https://github.com/uCore-RV-64/uCore-RV-64-conf.git cr-scripts
+	mkdir -p .github/workflows
+	mkdir -p .github/classroom
+	touch .github/.keep
+	cp cr-scripts/classroom.yml .github/workflows/classroom.yml
+	cp cr-scripts/autograding1.json .github/classroom/autograding.json
+	git add .github/.keep
+	git add .github/classroom/autograding.json
+	git add .github/workflows/classroom.yml
 
 # for local ubuntu with zsh shell SHELL, need root for sudo 
 ubuntu_setenv:

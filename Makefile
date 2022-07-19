@@ -67,8 +67,9 @@ docker:
 	docker pull nzpznk/oslab-c-env
 	docker run -it --name ${DOCKER_NAME} ${DOCKER_IMAGE_NAME} /bin/bash
 
+setenv: ubuntu_setenv classroom_setenv
 
-setclassroom: setclassroom1 setclassroom2 setclassroom3 setclassroom4 setclassroom5 setclassroom6 setclassroom7 setclassroom8
+classroom_setenv: setclassroom1 setclassroom2 setclassroom3 setclassroom4 setclassroom5 setclassroom6 setclassroom7 setclassroom8
 
 setclassroom1:
 	git checkout ch1

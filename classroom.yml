@@ -63,5 +63,5 @@ jobs:
           qemu-riscv64 --version
       - name: Clone user
         run: |
-          git clone https://github.com/uCore-RV-64/uCore-RV-64-test.git user
+          git clone https://github.com/cse410/uCore-RV-64-test.git user
       - uses: education/autograding@v1

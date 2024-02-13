@@ -73,7 +73,7 @@ classroom_setenv: setclassroom1 setclassroom2 setclassroom3 setclassroom4 setcla
 
 setclassroom1:
 	git checkout ch1
-	git clone https://github.com/uCore-RV-64/uCore-RV-64-conf.git cr-scripts
+	git clone https://github.com/cse410/uCore-RV-64-conf.git cr-scripts
 	#git checkout master -- scripts/classroom.yml
 	#git checkout master -- scripts/autograding0.json
 	mkdir -p .github/workflows
@@ -89,7 +89,7 @@ setclassroom1:
 
 setclassroom2:
 	git checkout ch2
-	git clone https://github.com/uCore-RV-64/uCore-RV-64-conf.git cr-scripts
+	git clone https://github.com/cse410/uCore-RV-64-conf.git cr-scripts
 	mkdir -p .github/workflows
 	mkdir -p .github/classroom
 	touch .github/.keep
@@ -101,7 +101,7 @@ setclassroom2:
 
 setclassroom3:
 	git checkout ch3
-	git clone https://github.com/uCore-RV-64/uCore-RV-64-conf.git cr-scripts
+	git clone https://github.com/cse410/uCore-RV-64-conf.git cr-scripts
 	mkdir -p .github/workflows
 	mkdir -p .github/classroom
 	touch .github/.keep
@@ -113,7 +113,7 @@ setclassroom3:
 	
 setclassroom4:
 	git checkout ch4
-	git clone https://github.com/uCore-RV-64/uCore-RV-64-conf.git cr-scripts
+	git clone https://github.com/cse410/uCore-RV-64-conf.git cr-scripts
 	mkdir -p .github/workflows
 	mkdir -p .github/classroom
 	touch .github/.keep
@@ -125,7 +125,7 @@ setclassroom4:
 
 setclassroom5:
 	git checkout ch5
-	git clone https://github.com/uCore-RV-64/uCore-RV-64-conf.git cr-scripts
+	git clone https://github.com/cse410/uCore-RV-64-conf.git cr-scripts
 	mkdir -p .github/workflows
 	mkdir -p .github/classroom
 	touch .github/.keep
@@ -137,7 +137,7 @@ setclassroom5:
 
 setclassroom6:
 	git checkout ch6
-	git clone https://github.com/uCore-RV-64/uCore-RV-64-conf.git cr-scripts
+	git clone https://github.com/cse410/uCore-RV-64-conf.git cr-scripts
 	mkdir -p .github/workflows
 	mkdir -p .github/classroom
 	touch .github/.keep
@@ -149,7 +149,7 @@ setclassroom6:
 
 setclassroom7:
 	git checkout ch7
-	git clone https://github.com/uCore-RV-64/uCore-RV-64-conf.git cr-scripts
+	git clone https://github.com/cse410/uCore-RV-64-conf.git cr-scripts
 	mkdir -p .github/workflows
 	mkdir -p .github/classroom
 	touch .github/.keep
@@ -161,7 +161,7 @@ setclassroom7:
 
 setclassroom8:
 	git checkout ch8
-	git clone https://github.com/uCore-RV-64/uCore-RV-64-conf.git cr-scripts
+	git clone https://github.com/cse410/uCore-RV-64-conf.git cr-scripts
 	mkdir -p .github/workflows
 	mkdir -p .github/classroom
 	touch .github/.keep
@@ -176,7 +176,7 @@ ubuntu_setenv:
 	cd ${HOME} && sudo wget https://static.dev.sifive.com/dev-tools/freedom-tools/v2020.08/riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-linux-ubuntu14.tar.gz
 	cd ${HOME} && sudo tar xzf riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-linux-ubuntu14.tar.gz
 	cd ${HOME} && sudo mv riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-linux-ubuntu14 riscv64-unknown-elf-gcc
-	cd ${HOME} && sudo wget -O riscv64-linux-musl-cross.tgz https://cloud.tsinghua.edu.cn/f/b07bac9bcfa14f1dae66/?dl=1
+	cd ${HOME} && sudo wget -O riscv64-linux-musl-cross.tgz https://musl.cc/riscv64-linux-musl-cross.tgz
 	cd ${HOME} && sudo tar xzf riscv64-linux-musl-cross.tgz
 	#sudo echo export PATH=\"\$$HOME/riscv64-unknown-elf-gcc/bin:\$$PATH\" >>  ~/.bashrc
 	#sudo echo export PATH=\"\$$HOME/riscv64-linux-musl-cross/bin:\$$PATH\" >> ~/.bashrc
@@ -207,7 +207,7 @@ codespaces_setenv:
 	cd ${HOME} && sudo wget https://static.dev.sifive.com/dev-tools/freedom-tools/v2020.08/riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-linux-ubuntu14.tar.gz
 	cd ${HOME} && sudo tar xzf riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-linux-ubuntu14.tar.gz
 	cd ${HOME} && sudo mv riscv64-unknown-elf-gcc-10.1.0-2020.08.2-x86_64-linux-ubuntu14 riscv64-unknown-elf-gcc
-	cd ${HOME} && sudo wget -O riscv64-linux-musl-cross.tgz https://cloud.tsinghua.edu.cn/f/b07bac9bcfa14f1dae66/?dl=1
+	cd ${HOME} && sudo wget -O riscv64-linux-musl-cross.tgz https://musl.cc/riscv64-linux-musl-cross.tgz
 	cd ${HOME} && sudo tar xzf riscv64-linux-musl-cross.tgz
 	#sudo echo export PATH=\"\$$HOME/riscv64-unknown-elf-gcc/bin:\$$PATH\" >>  ~/.bashrc
 	#sudo echo export PATH=\"\$$HOME/riscv64-linux-musl-cross/bin:\$$PATH\" >> ~/.bashrc

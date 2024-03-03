@@ -3,7 +3,7 @@
     {
       "name": "run_os",
       "setup": "",
-      "run": "make clean test",
+      "run": "make clean test BASE=0",
       "input": "",
       "output": "",
       "comparison": "included",
